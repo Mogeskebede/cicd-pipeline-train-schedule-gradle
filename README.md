@@ -1,4 +1,28 @@
-# cicd-pipeline-train-schedule-gradle
+# cicd-pipeline-train-schedule-apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: buildconfigs.build.openshift.io
+spec:
+  group: build.openshift.io
+  names:
+    kind: BuildConfig
+    listKind: BuildConfigList
+    plural: buildconfigs
+    singular: buildconfig
+  scope: Namespaced
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+          status:
+            type: object
+
 
 This is a simple train schedule app written using nodejs. It is intended to be used as a sample application for a series of hands-on learning activities.
 
